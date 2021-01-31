@@ -3,18 +3,38 @@ import React from 'react'
 import { Text } from 'react-native'
 import * as Linking from 'expo-linking'
 import { NavigationContainer } from '@react-navigation/native'
-import Home from './src/Home'
+import { createStackNavigator } from '@react-navigation/stack'
+import { UserStore } from './src/store/UserStore'
+import Home from './src/screens/Home'
+import MovieList from './src/screens/MovieList'
+import AuthCallback from './src/screens/AuthCallback'
 
-const prefix = Linking.createURL('/')
+const prefix = Linking.createURL('movie-list')
+const Stack = createStackNavigator();
 
 export default function App() {
   const linking = {
     prefixes: [prefix],
+    config: {
+      screens: {
+        Home: '/home',
+        List: '/list',
+        Auth: '/auth/callback',
+      }
+    }
   }
+
+  console.log(linking)
 
   return (
     <NavigationContainer linking={linking} fallback={<Text>Loading...</Text>}>
-      <Home />
+      <UserStore>
+        <Stack.Navigator>
+          <Stack.Screen name='Home' component={Home} />
+          <Stack.Screen name='List' component={MovieList} />
+          <Stack.Screen name='Auth' component={AuthCallback} />
+        </Stack.Navigator>
+      </UserStore>
     </NavigationContainer>
   )
 }
