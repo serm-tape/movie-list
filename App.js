@@ -8,6 +8,7 @@ import { UserStore } from './src/store/UserStore'
 import Home from './src/screens/Home'
 import MovieList from './src/screens/MovieList'
 import AuthCallback from './src/screens/AuthCallback'
+import MovieDetail from './src/screens/MovieDetail'
 
 const prefix = Linking.createURL('movie-list')
 const Stack = createStackNavigator();
@@ -20,6 +21,7 @@ export default function App() {
         Home: '/home',
         List: '/list',
         Auth: '/auth/callback',
+        Detail: '/movies/:id'
       }
     }
   }
@@ -33,6 +35,7 @@ export default function App() {
           <Stack.Screen name='Home' component={Home} />
           <Stack.Screen name='List' component={MovieList} />
           <Stack.Screen name='Auth' component={AuthCallback} />
+          <Stack.Screen name='Detail' component={MovieDetail} />
         </Stack.Navigator>
       </UserStore>
     </NavigationContainer>

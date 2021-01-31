@@ -26,9 +26,8 @@ const Home = ({route}) => {
 
   return (
     <View style={styles.container}>
-      <Text> {status} </Text>
-      <Text> {JSON.stringify(route.params)} </Text>
-      <Button title='Sign in' onPress={getCode} />
+      <Text> Welcome to movie list app! </Text>
+      <Button title='sign in with github' onPress={getCode} />
       <StatusBar style="auto" />
     </View>
   )
