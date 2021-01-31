@@ -4,9 +4,13 @@
   "expo": {
     "name": "movie-list",
     "slug": "movie-list",
+    "scheme": "serm",
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "android": {
+      "package": "com.serm.movielist"
+    }
   }
 }
