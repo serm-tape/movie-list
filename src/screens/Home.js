@@ -11,11 +11,6 @@ const styles = StyleSheet.create({
    flex: 1,
    paddingTop: 22
   },
-  item: {
-    padding: 10,
-    fontSize: 18,
-    height: 44,
-  },
 })
 
 //'https://jsonplaceholder.typicode.com/users'
