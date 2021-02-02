@@ -2,6 +2,7 @@ import React, {createContext, useReducer, useEffect} from 'react'
 import { Linking } from 'react-native'
 import * as uuid from 'uuid'
 import axios from 'axios'
+import {CLIENT_ID, CLIENT_SECRET} from '@env'
 
 export const UserContext = createContext({})
 
@@ -9,8 +10,6 @@ const initialUserState = {
   access_token: null,
   state: uuid.v4()
 }
-const CLIENT_ID = '3c07a7ec22e54122d952'
-const CLIENT_SECRET = 'd5b80bed204b79c756f2f44dca940bf4ae4d706a' //TODO: move this to https://docs.expo.io/versions/latest/sdk/securestore/ later
 
 const userReducer = (state, action) => {
   const payload = action.payload

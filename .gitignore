@@ -131,3 +131,6 @@ package-lock.json
 # Expo
 .expo/*
 web-build/
+
+.env
+
